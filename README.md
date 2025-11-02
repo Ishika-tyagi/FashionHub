@@ -1,9 +1,9 @@
 # FashionHub Project
-
 This is a Spring Boot project for FashionHub, an online fashion store platform.
-This project is originally created by my friend. I contributed the following updates and improvements:
 
-## What I have done
+This project is originally created by my friend Adtiya. I contributed the following updates and improvements:
+
+## My Contributions
 
 - **Home Page Enhancements**
   - Added **drop-down menus** for categories.
