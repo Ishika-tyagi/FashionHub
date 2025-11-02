@@ -1,145 +1,137 @@
-<html lang="en" th:replace="base :: layout(~{::section})">
-  <body>
-    <section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fashion Hub</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/CSS/style.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
 
-   <!-- ✅ HERO SECTION (Luxury Style Banner with Wave Bottom + Elegant Text) -->
-<div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="8000">
-  <div class="carousel-inner">
-
-    <!-- Slide 1 -->
-    <div class="carousel-item active" style="background-image: url('https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1920&q=80');">
-      <div class="hero-overlay"></div>
-      <div class="carousel-caption text-center hero-content">
-        <h1 class="fw-bold display-4 animate__animated animate__fadeInDown">Elevate Your Everyday Style</h1>
-        <p class="lead animate__animated animate__fadeInUp">Luxury, Comfort & Confidence — Tailored for You</p>
-        <a href="/products" class="btn btn-hero shadow-lg">Shop the Collection</a>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">Fashion Hub</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Categories</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Men</a></li>
+              <li><a class="dropdown-item" href="#">Women</a></li>
+              <li><a class="dropdown-item" href="#">Kids</a></li>
+              <li><a class="dropdown-item" href="#">Accessories</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="#">Trending</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Cart</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Profile</a></li>
+        </ul>
       </div>
     </div>
+  </nav>
 
-    <!-- Slide 2 -->
-    <div class="carousel-item" style="background-image: url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1920&q=80');">
-      <div class="hero-overlay"></div>
-      <div class="carousel-caption text-center hero-content">
-        <h1 class="fw-bold display-4">Redefining Modern Elegance</h1>
-        <p class="lead">Discover the season’s most coveted looks.</p>
-        <a href="/products" class="btn btn-hero">Explore Now</a>
+  <!-- Hero Banner -->
+  <section class="hero-banner text-center text-white d-flex align-items-center justify-content-center" style="background-image: url('/images/banner.jpg'); height: 400px; background-size: cover; background-position: center;">
+    <div class="overlay">
+      <h1 class="display-4 fw-bold">Discover Fashion Trends</h1>
+      <p class="lead">Shop your favorite styles today!</p>
+      <a href="#trending" class="btn btn-primary btn-lg">Shop Now</a>
+    </div>
+  </section>
+
+  <!-- Categories Section -->
+  <section class="container py-5">
+    <h2 class="fw-bold mb-4">Categories</h2>
+    <div class="row text-center">
+      <div class="col-md-3 col-6 mb-3">
+        <div class="category-card p-3 shadow-sm rounded">
+          <img src="/images/categories/men.jpg" class="img-fluid rounded" alt="Men">
+          <h5 class="mt-2">Men</h5>
+        </div>
+      </div>
+      <div class="col-md-3 col-6 mb-3">
+        <div class="category-card p-3 shadow-sm rounded">
+          <img src="/images/categories/women.jpg" class="img-fluid rounded" alt="Women">
+          <h5 class="mt-2">Women</h5>
+        </div>
+      </div>
+      <div class="col-md-3 col-6 mb-3">
+        <div class="category-card p-3 shadow-sm rounded">
+          <img src="/images/categories/kids.jpg" class="img-fluid rounded" alt="Kids">
+          <h5 class="mt-2">Kids</h5>
+        </div>
+      </div>
+      <div class="col-md-3 col-6 mb-3">
+        <div class="category-card p-3 shadow-sm rounded">
+          <img src="/images/categories/accessories.jpg" class="img-fluid rounded" alt="Accessories">
+          <h5 class="mt-2">Accessories</h5>
+        </div>
       </div>
     </div>
+  </section>
 
-    <!-- Slide 3 -->
-    <div class="carousel-item" style="background-image: url('https://images.unsplash.com/photo-1520975922032-bc3e729e0924?auto=format&fit=crop&w=1920&q=80');">
-      <div class="hero-overlay"></div>
-      <div class="carousel-caption text-center hero-content">
-        <h1 class="fw-bold display-4">Where Style Meets Soul</h1>
-        <p class="lead">From streetwear to sophistication — made for you.</p>
-        <a href="/products" class="btn btn-hero">Discover</a>
+  <!-- Trending Products Section -->
+  <section id="trending" class="container py-5">
+    <h2 class="fw-bold mb-4">Trending Products</h2>
+    <div class="row">
+      <!-- Product Card -->
+      <div class="col-md-3 col-6 mb-4">
+        <div class="card product-card shadow-sm">
+          <img src="/images/products/p1.jpg" class="card-img-top" alt="Product 1">
+          <div class="card-body">
+            <h5 class="card-title">Casual Shirt</h5>
+            <p class="card-text fw-bold">$29.99</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <button class="btn btn-primary btn-sm">Add to Cart</button>
+              <i class="far fa-heart wishlist-icon"></i>
+            </div>
+          </div>
+        </div>
       </div>
+      <!-- Repeat similar product cards -->
+      <div class="col-md-3 col-6 mb-4">
+        <div class="card product-card shadow-sm">
+          <img src="/images/products/p2.jpg" class="card-img-top" alt="Product 2">
+          <div class="card-body">
+            <h5 class="card-title">Elegant Dress</h5>
+            <p class="card-text fw-bold">$49.99</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <button class="btn btn-primary btn-sm">Add to Cart</button>
+              <i class="far fa-heart wishlist-icon"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Add more cards as needed -->
     </div>
-  </div>
+  </section>
 
-  <!-- Controls -->
-  <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon"></span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
-    <span class="carousel-control-next-icon"></span>
-  </button>
+  <!-- Reels / Featured Section -->
+  <section class="container py-5">
+    <h2 class="fw-bold mb-4">Featured Reels</h2>
+    <div class="reels-container d-flex overflow-auto gap-3">
+      <div class="reel-card shadow-sm rounded">
+        <img src="/images/reels/reel1.jpg" class="img-fluid rounded" alt="Reel 1">
+      </div>
+      <div class="reel-card shadow-sm rounded">
+        <img src="/images/reels/reel2.jpg" class="img-fluid rounded" alt="Reel 2">
+      </div>
+      <div class="reel-card shadow-sm rounded">
+        <img src="/images/reels/reel3.jpg" class="img-fluid rounded" alt="Reel 3">
+      </div>
+      <!-- Add more reels -->
+    </div>
+  </section>
 
-  <!-- ✅ Wave Shape at Bottom -->
-  <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 200">
-    <path fill="#fff" fill-opacity="1" d="M0,160L60,144C120,128,240,96,360,101.3C480,107,600,149,720,165.3C840,181,960,171,1080,149.3C1200,128,1320,96,1380,80L1440,64V200H0Z"></path>
-  </svg>
-</div>
-
-
-
-      <!-- ✅ STYLES -->
-      <style>
-     /* ---------- IMPROVED HERO SECTION ---------- */
-#heroCarousel {
-  height: 90vh;
-  position: relative;
-  overflow: hidden;
-}
-
-.carousel-item {
-  height: 90vh;
-  background-size: cover;
-  background-position: center;
-  position: relative;
-}
-
-.hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle at center, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.75) 100%);
-}
-
-/* ✅ Center all content perfectly */
-.carousel-caption.hero-content {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* vertical centering */
-  align-items: center;     /* horizontal centering */
-  text-align: center;
-  z-index: 5;
-  padding: 0 1rem;
-}
-
-.hero-content h1 {
-  color: #fff;
-  letter-spacing: 1px;
-  font-weight: 800;
-  text-shadow: 0 3px 15px rgba(0,0,0,0.5);
-}
-
-.hero-content p {
-  color: #f8f9fa;
-  margin-bottom: 1.8rem;
-  font-weight: 400;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.4);
-}
-
-.btn-hero {
-  background: linear-gradient(90deg, #ff6a00, #ee0979);
-  color: #fff;
-  border-radius: 50px;
-  padding: 0.9rem 2.5rem;
-  border: none;
-  transition: all 0.35s ease;
-  backdrop-filter: blur(5px);
-}
-
-.btn-hero:hover {
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 0 25px rgba(238, 9, 121, 0.6);
-}
-
-/* ---------- Wave Shape ---------- */
-.wave {
-  position: absolute;
-  bottom: -1px;
-  left: 0;
-  width: 100%;
-  height: auto;
-  z-index: 10;
-}
-
-/* ---------- Responsive ---------- */
-@media (max-width: 768px) {
-  .hero-content h1 { font-size: 1.8rem; }
-  .hero-content p { font-size: 1rem; }
-}
-
-      </style>
-    </section>
-  </body>
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/home.js"></script>
+</body>
 </html>
